@@ -1,5 +1,7 @@
 require_relative 'timeperiod'
 require_relative 'initialization'
+require_relative 'month'
+require_relative 'week'
 
 class Year
   include TimePeriod
@@ -26,6 +28,14 @@ class Year
   
   def prev
     self.class.new(@year - 1)
+  end
+  
+  def months
+    Month.new(@year, 1)..Month.new(@year, 12)
+  end
+  
+  def weeks
+    Week.new(@year, 1)..Week.new(@year, 52)
   end
 
   alias_method :succ, :next

@@ -1,5 +1,6 @@
 require_relative 'timeperiod'
 require_relative 'initialization'
+require_relative 'week'
 
 class Month
   include TimePeriod

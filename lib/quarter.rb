@@ -1,5 +1,7 @@
 require_relative 'timeperiod'
 require_relative 'initialization'
+require_relative 'month'
+require_relative 'week'
 
 class Quarter
   include TimePeriod

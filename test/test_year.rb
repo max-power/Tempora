@@ -33,4 +33,14 @@ class YearTest < Minitest::Test
     assert_equal 2026, year.next.year
     assert_equal 2024, year.prev.year
   end
+  
+  def test_months
+    year = Year.new(2025)
+    assert_equal year.months.count, 12
+  end
+  
+  def test_weeks
+    year = Year.new(2025)
+    assert_equal year.weeks.count, 52
+  end
 end
