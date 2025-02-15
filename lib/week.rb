@@ -7,12 +7,12 @@ class Week
     
   def initialize(year, week)
     @year   = Integer(year)
-    @number = Integer(week).clamp(1,52)
+    @number = Integer(week)
     
     @start_date = Date.commercial(@year, @number, 1)
     @end_date   = start_date + 6
   end
-  
+    
   def id(seperator="-")
     "#{year}#{seperator}W#{format('%02d', number)}"
   end
@@ -31,10 +31,10 @@ class Week
   
   alias_method :succ, :next
   alias_method :pred, :prev
-  
+    
   private
   
   def self.initialization_parameter(date)
-    [date.year, date.cweek]
+    [date.cwyear, date.cweek]
   end
 end

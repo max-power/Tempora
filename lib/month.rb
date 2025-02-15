@@ -42,6 +42,10 @@ class Month
     Week.from(start_date)..Week.from(end_date)
   end
   
+  def each_week(&block)
+    weeks.each(&block)
+  end
+  
   alias_method :month, :number
   alias_method :succ, :next
   alias_method :pred, :prev

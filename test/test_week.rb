@@ -40,4 +40,23 @@ class WeekTest < Minitest::Test
     assert_equal "2025-W02", week.id
     assert_equal "2025/W02", week.id('/')
   end
+  
+  def test_range_spans_across_years
+    start_week = Week.new(2024, 52)
+    end_week = Week.new(2025, 1)
+
+    # This range will now work correctly, even across years
+    week_range = (start_week..end_week)
+    assert_equal 2, week_range.count
+  end
+  
+  def test_range_spans_across_years_53_week_year
+    start_week = Week.new(2020, 52)
+    end_week = Week.new(2021, 1)
+
+    # This range will now work correctly, even across years
+    week_range = (start_week..end_week)
+    assert_equal 3, week_range.count
+  end
+  
 end

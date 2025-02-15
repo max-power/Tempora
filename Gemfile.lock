@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tempora (0.1.0)
+    tempora (0.1.2)
 
 GEM
   remote: https://rubygems.org/

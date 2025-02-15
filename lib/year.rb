@@ -37,6 +37,14 @@ class Year
   def weeks
     Week.from(start_date)..Week.from(end_date)
   end
+  
+  def each_month(&block)
+    months.each(&block)
+  end
+  
+  def each_week(&block)
+    weeks.each(&block)
+  end
 
   alias_method :succ, :next
   alias_method :pred, :prev
