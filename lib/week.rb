@@ -35,6 +35,6 @@ class Week
   private
   
   def self.initialization_parameter(date)
-    [date.cwyear, date.cweek]
+    [date.year, date.cweek]
   end
 end
