@@ -1,19 +1,19 @@
-# Tempus
+# Tempora
 
-Tempus is a lightweight Ruby library for handling months, weeks, quarters, and years with intuitive date-based calculations and range support.
+Tempora is a lightweight Ruby library for handling months, weeks, quarters, and years with intuitive date-based calculations and range support.
 
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
 
 ```bash
-bundle add tempus
+bundle add tempora
 ```
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
 ```bash
-gem install tempus
+gem install tempora
 ```
 
 ## Usage
@@ -165,7 +165,7 @@ q.weeks.each { |w| puts w.to_s }
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/max-power/tempus.
+Bug reports and pull requests are welcome on GitHub at https://github.com/max-power/tempora.
 
 ## License
 

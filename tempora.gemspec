@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-require_relative "lib/tempus/version"
+require_relative "lib/tempora/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "tempus"
-  spec.version = Tempus::VERSION
+  spec.name = "tempora"
+  spec.version = Tempora::VERSION
   spec.authors = ["Max Power"]
   spec.email = ["kevin.melchert@gmail.com"]
 
-  spec.summary = "Tempus is a lightweight Ruby library for handling months, weeks, quarters, and years."
-  spec.description = "Tempus is a lightweight Ruby library for handling months, weeks, quarters, and years with intuitive date-based calculations and range support."
-  spec.homepage = "https://github.com/max-power/tempus"
+  spec.summary = "Tempora is a lightweight Ruby library for handling months, weeks, quarters, and years."
+  spec.description = "Tempora is a lightweight Ruby library for handling months, weeks, quarters, and years with intuitive date-based calculations and range support."
+  spec.homepage = "https://github.com/max-power/tempora"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.1.0"
 
