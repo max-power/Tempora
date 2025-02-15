@@ -1,9 +1,14 @@
 require 'date'
 
-module TimePeriod
+class TimePeriod
   include Comparable
   
   attr_reader :start_date, :end_date, :year, :number
+  
+  def initialize(start_date, end_date)
+    @start_date = start_date
+    @end_date   = end_date
+  end
 
   def range
     start_date..end_date
@@ -26,7 +31,7 @@ module TimePeriod
   end
 
   def overlaps?(other)
-    range.overlaps?(other.range)
+    range.overlap?(other.range)
   end
 
   def intersection(other)
@@ -35,7 +40,7 @@ module TimePeriod
     new_start = [start_date, other.start_date].max
     new_end = [end_date, other.end_date].min
 
-    self.class.new(new_start, new_end)
+    TimePeriod.new(new_start, new_end)
   end
   
   def <=>(other)
@@ -46,4 +51,3 @@ module TimePeriod
   alias_method :end, :end_date
   alias_method :length, :duration
 end
-

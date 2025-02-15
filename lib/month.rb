@@ -1,10 +1,10 @@
 require_relative 'timeperiod'
-require_relative 'initialization'
-require_relative 'week'
+require_relative 'tempora/initialization'
+require_relative 'tempora/has_weeks'
 
-class Month
-  include TimePeriod
+class Month < TimePeriod
   extend Initialization
+  include HasWeeks
 
   def initialize(year, month)
     @year   = Integer(year)
@@ -36,14 +36,6 @@ class Month
   
   def prev
     self.class.from(start_date.prev_month) # @start_date << 1
-  end
-  
-  def weeks
-    Week.from(start_date)..Week.from(end_date)
-  end
-  
-  def each_week(&block)
-    weeks.each(&block)
   end
   
   alias_method :month, :number

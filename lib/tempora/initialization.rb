@@ -1,5 +1,3 @@
-require 'date'
-
 module Initialization
   def now
     from Time.now
@@ -8,7 +6,7 @@ module Initialization
   alias_method :current, :now
   
   def from(date)
-    new *initialization_parameter(date.to_date)
+    new(*initialization_parameter(date.to_date))
   end
   
   private

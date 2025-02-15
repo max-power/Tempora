@@ -1,11 +1,12 @@
 require_relative 'timeperiod'
-require_relative 'initialization'
-require_relative 'month'
-require_relative 'week'
+require_relative 'tempora/initialization'
+require_relative 'tempora/has_months'
+require_relative 'tempora/has_weeks'
 
-class Quarter
-  include TimePeriod
+class Quarter < TimePeriod
   extend Initialization
+  include HasMonths
+  include HasWeeks
 
   def initialize(year, quarter)
     @year   = Integer(year)
@@ -34,19 +35,14 @@ class Quarter
   
   alias_method :succ, :next
   alias_method :pred, :prev
-    
-  def months
-    Month.from(start_date)..Month.from(end_date)
-  end
-  
-  def weeks
-    Week.from(start_date)..Week.from(end_date)
-  end
   
   private
   
   def self.initialization_parameter(date)
-    quarter = ((date.month - 1) / 3) + 1
-    [date.year, quarter]
+    [date.year, quarter_from_date(date)]
+  end
+  
+  def self.quarter_from_date(date)
+    ((date.month - 1) / 3) + 1
   end
 end

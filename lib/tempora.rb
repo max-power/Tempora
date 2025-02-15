@@ -2,7 +2,6 @@
 
 require_relative "tempora/version"
 require_relative "timeperiod"
-require_relative "initialization"
 require_relative "year"
 require_relative "month"
 require_relative "week"

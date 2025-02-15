@@ -1,8 +1,7 @@
 require_relative 'timeperiod'
-require_relative 'initialization'
+require_relative 'tempora/initialization'
 
-class Week
-  include TimePeriod
+class Week < TimePeriod
   extend Initialization
     
   def initialize(year, week)
