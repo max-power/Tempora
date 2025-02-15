@@ -15,27 +15,27 @@ class Month
   end
   
   def id(seperator="-")
-    "#{@year}#{seperator}#{@number.to_s.rjust(2, '0')}"
+    "#{year}#{seperator}#{number.to_s.rjust(2, '0')}"
   end
 
   def to_s
-    "#{month_name} #{@year}"
+    "#{month_name} #{year}"
   end
 
   def month_name
-    Date::MONTHNAMES[@number]
+    Date::MONTHNAMES[number]
   end
   
   def month_abbr
-    Date::ABBR_MONTHNAMES[@number]
+    Date::ABBR_MONTHNAMES[number]
   end
   
   def next
-    self.class.from(@start_date.next_month) # @start_date >> 1
+    self.class.from(start_date.next_month) # @start_date >> 1
   end
   
   def prev
-    self.class.from(@start_date.prev_month) # @start_date << 1
+    self.class.from(start_date.prev_month) # @start_date << 1
   end
   
   def weeks

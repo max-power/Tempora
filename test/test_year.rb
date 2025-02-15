@@ -41,6 +41,6 @@ class YearTest < Minitest::Test
   
   def test_weeks
     year = Year.new(2025)
-    assert_equal year.weeks.count, 52
+    assert_equal year.weeks.count, 53
   end
 end

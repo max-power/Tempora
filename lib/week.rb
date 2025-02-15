@@ -14,19 +14,19 @@ class Week
   end
   
   def id(seperator="-")
-    "#{@year}#{seperator}W#{format('%02d', @number)}"
+    "#{year}#{seperator}W#{format('%02d', number)}"
   end
   
   def to_s
-    "Week #{@number}, #{@year}"
+    "Week #{number}, #{year}"
   end
   
   def next
-    self.class.from(@start_date + 7)
+    self.class.from(start_date + 7)
   end
 
   def prev
-    self.class.from(@start_date - 7)
+    self.class.from(start_date - 7)
   end
   
   alias_method :succ, :next

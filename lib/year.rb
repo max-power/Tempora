@@ -15,27 +15,27 @@ class Year
   end
   
   def id
-    @year
+    year
   end
 
   def to_s
-    @year.to_s
+    year.to_s
   end
   
   def next
-    self.class.new(@year + 1)
+    self.class.new(year + 1)
   end
   
   def prev
-    self.class.new(@year - 1)
+    self.class.new(year - 1)
   end
   
   def months
-    Month.new(@year, 1)..Month.new(@year, 12)
+    Month.new(year, 1)..Month.new(year, 12)
   end
   
   def weeks
-    Week.new(@year, 1)..Week.new(@year, 52)
+    Week.from(start_date)..Week.from(end_date)
   end
 
   alias_method :succ, :next

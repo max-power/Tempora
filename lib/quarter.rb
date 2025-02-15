@@ -17,30 +17,30 @@ class Quarter
   end
   
   def id(seperator="-")
-    "#{@year}#{seperator}Q#{@number}"
+    "#{year}#{seperator}Q#{number}"
   end
 
   def to_s
-    "Q#{@number} #{@year}"
+    "Q#{number} #{year}"
   end
   
   def next
-    self.class.from(@start_date >> 3)
+    self.class.from(start_date >> 3)
   end
 
   def prev
-    self.class.from(@start_date << 3)
+    self.class.from(start_date << 3)
   end
   
   alias_method :succ, :next
   alias_method :pred, :prev
     
   def months
-    Month.from(@start_date)..Month.from(@start_date.next_month(2))
+    Month.from(start_date)..Month.from(end_date)
   end
   
   def weeks
-    Week.from(@start_date)..Week.from(@end_date)
+    Week.from(start_date)..Week.from(end_date)
   end
   
   private
