@@ -18,7 +18,7 @@ gem install tempus
 
 ## Usage
 
-##🔹 1. Generating Monthly Reports
+## 1. Generating Monthly Reports
 
 Useful for finance, sales, employee attendance, or analytics dashboards
 Example: Fetch revenue per day for a given month
@@ -32,7 +32,7 @@ month.days.each do |day|
 end
 ```
 
-####📌 Output:
+📌 Output:
 ```
 2025-02-01: $1000  
 2025-02-02: $2000  
@@ -41,7 +41,7 @@ end
 2025-02-10: $500  
 ```
 
-## 🔹 2. Calendar & Scheduling Systems
+## 2. Calendar & Scheduling Systems
 
 Generate a calendar for scheduling shifts, meetings, or events
 
@@ -51,7 +51,7 @@ puts "📅 Calendar for #{month.name}"
 month.weeks.each { |week| puts week.to_s }
 ```
 
-####📌 Output:
+📌 Output:
 ```
 Week 5, 2025
 Week 6, 2025
@@ -63,7 +63,7 @@ Week 9, 2025
 
 ➡️ Could be used in a Rails view to generate a full calendar!
 
-## 🔹 3. Recurring Events & Subscriptions
+## 3. Recurring Events & Subscriptions
 
 Automate billing cycles, gym memberships, or SaaS renewals
 
@@ -77,7 +77,7 @@ puts next_billing_cycle(Date.today) # => 2025-03-01
 
 ➡️ Use this for subscription renewals, invoice due dates, etc.
 
-## 🔹 4. Employee Shift Management
+## 4. Employee Shift Management
 
 Organize employees' shifts week-by-week in a month
 
@@ -96,7 +96,7 @@ end
 ➡️ Helps in HR systems for workforce planning.
 
 
-## 🔹 5. Generating Reports for a Quarter
+## 5. Generating Reports for a Quarter
 
 Use the Quarter class to analyze quarterly data
 
