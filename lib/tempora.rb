@@ -10,5 +10,6 @@ require_relative "quarter"
 
 module Tempora
   class Error < StandardError; end
-  # Your code goes here...
 end
+
+Object.send(:include, Tempora)
