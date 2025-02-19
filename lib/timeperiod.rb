@@ -1,12 +1,14 @@
 require 'date'
 require_relative 'tempora/has_days'
+require_relative 'tempora/has_time'
 
 module Tempora
   class TimePeriod
     include Comparable
     include HasDays
+    include HasTime
   
-    attr_reader :start_date, :end_date, :year, :number
+    attr_reader :start_date, :end_date
   
     def initialize(start_date, end_date)
       @start_date = start_date
@@ -33,7 +35,7 @@ module Tempora
       return nil unless overlaps?(other)
 
       new_start = [start_date, other.start_date].max
-      new_end = [end_date, other.end_date].min
+      new_end   = [end_date, other.end_date].min
 
       TimePeriod.new(new_start, new_end)
     end

@@ -43,4 +43,14 @@ class MonthTest < Minitest::Test
     assert_equal "2025-02", month.id
     assert_equal "2025/02", month.id('/')
   end
+  
+  def test_start_time
+    month = Month.new(2025,2)
+    assert_equal Time.new(2025,2,1,0,0,0), month.start_time
+  end
+  
+  def test_end_time
+    month = Month.new(2025,2)
+    assert_equal Time.new(2025,2,28,23,59,59), month.end_time
+  end
 end

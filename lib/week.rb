@@ -5,6 +5,8 @@ module Tempora
   class Week < TimePeriod
     extend Initialization
     
+    attr_reader :year, :number
+    
     def initialize(year, week)
       @year   = Integer(year)
       @number = Integer(week)

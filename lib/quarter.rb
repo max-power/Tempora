@@ -8,6 +8,8 @@ module Tempora
     extend Initialization
     include HasMonths
     include HasWeeks
+    
+    attr_reader :year, :number
 
     def initialize(year, quarter)
       @year   = Integer(year)

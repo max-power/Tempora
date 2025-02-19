@@ -6,6 +6,8 @@ module Tempora
   class Month < TimePeriod
     extend Initialization
     include HasWeeks
+    
+    attr_reader :year, :number
 
     def initialize(year, month)
       @year   = Integer(year)
