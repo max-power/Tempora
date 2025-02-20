@@ -48,8 +48,10 @@ module Tempora
       start_date <=> other.start_date
     end
   
-    alias_method :begin, :start_date
-    alias_method :end, :end_date
-    alias_method :length, :duration
+    alias_method :begin,     :start_date
+    alias_method :first_day, :start_date
+    alias_method :end,       :end_date
+    alias_method :last_day,  :end_date
+    alias_method :length,    :duration
   end
 end
