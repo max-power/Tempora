@@ -47,7 +47,11 @@ module Tempora
     def <=>(other)
       start_date <=> other.start_date
     end
-  
+    
+    def hash
+      [self.class, id || range].hash
+    end
+    
     alias_method :begin,     :start_date
     alias_method :first_day, :start_date
     alias_method :end,       :end_date
