@@ -26,11 +26,11 @@ module Tempora
     end
 
     def month_name
-      Date::MONTHNAMES[number]
+      I18n.t('date.month_names')[number]
     end
   
     def month_abbr
-      Date::ABBR_MONTHNAMES[number]
+      I18n.t('date.abbr_month_names')[number]
     end
   
     def next

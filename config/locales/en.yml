@@ -1,0 +1,74 @@
+---
+en:
+  defaults: &defaults
+    month_names:
+      [~, January, February, March, April, May, June, July, August, September, October, November, December]
+    abbr_month_names:
+      [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+    day_names:
+      [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+    abbr_day_names:
+      [Su, Mo, Tu, We, Th, Fr, Sa]
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    order:
+    - :day
+    - :month
+    - :year
+
+  date:
+    <<: *defaults
+  time:
+    <<: *defaults
+    
+  timeperiod:
+    year: "Year"
+    quarter: "Quarter"
+    month: "Month"
+    week: "Week"
+
+    same_day:
+      default: # 2015-10-03, 10:30 - 12:45
+        from: "%Y-%m-%d, %H:%M"
+        till: "%H:%M"
+      long:   # October 03, 2015, 10:30 - 12:45
+        from: "%B %d, %Y, %H:%M"
+        till: "%H:%M"
+      short:  # Oct 03, 10:30 - 12:45
+        from: "%b %d, %H:%M"
+        till: "%H:%M"
+      time: 
+        from: "%H:%M"
+        till: "%H:%M"
+    same_month:
+      default: # 2015-10-03 - 09
+        from: "%Y-%m-%d"
+        till: "%d"
+      long:   # October 03 - 09, 2015 
+        from: "%B %d"
+        till: "%d, %Y"
+      short:  # Oct 03 - 09
+        from: "%b %d"
+        till: "%d"
+    same_year:
+      default: # 2015-10-03 - 11-30
+        from: "%Y-%m-%d"
+        till: "%m-%d"
+      long:   # October 10 - November 20, 2015
+        from: "%B %d"
+        till: "%B %d, %Y"
+      short:  # Oct 10 - Nov 20, 15
+        from: "%b %d"
+        till: "%b %d, %y"
+    different_year:
+      default: # 2015-10-10 - 2016-11-20
+        from: "%Y-%m-%d"
+        till: "%Y-%m-%d"
+      long:   # October 10, 2015 - November 20, 2016
+        from: "%B %d, %Y"
+        till: "%B %d, %Y"
+      short:   # Oct 10, 15 - Nov 20, 16
+        from: "%b %d, %y"
+        till: "%b %d, %y"

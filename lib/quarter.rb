@@ -25,7 +25,7 @@ module Tempora
     end
 
     def to_s
-      "Q#{number} #{year}"
+      "#{I18n.t('timeperiod.quarter')} #{number}, #{year}"
     end
   
     def next

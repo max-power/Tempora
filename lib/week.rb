@@ -20,7 +20,7 @@ module Tempora
     end
   
     def to_s
-      "Week #{number}, #{year}"
+      "#{I18n.t('timeperiod.week')} #{number}, #{year}"
     end
   
     def next
