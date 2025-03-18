@@ -12,7 +12,7 @@ module Tempora
     def render
       from = I18n.l @timeperiod.begin, format: format_for(:from)
       till = I18n.l @timeperiod.end,   format: format_for(:till)
-      [from, till].reject(&:empty?).join ' – '
+      [from, till].reject(&:empty?).join '–'
     end
     
     private
