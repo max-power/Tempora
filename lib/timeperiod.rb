@@ -22,7 +22,15 @@ module Tempora
     def duration
       (end_date - start_date).to_i + 1
     end
-
+    
+    def future?
+      start_date.future?
+    end
+    
+    def past?
+      end_date.past?
+    end
+    
     def contains?(date)
       range.cover?(date)
     end
@@ -57,5 +65,6 @@ module Tempora
     alias_method :end,       :end_date
     alias_method :last_day,  :end_date
     alias_method :length,    :duration
+    alias_method :include?   :contains?
   end
 end
