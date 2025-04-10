@@ -7,7 +7,7 @@ class QuarterTest < Minitest::Test
     quarter = Quarter.new(2025, 3)
     assert_equal 2025, quarter.year
     assert_equal 3, quarter.number
-    assert_equal 'Q3 2025', quarter.to_s
+    assert_equal 'Quarter 3, 2025', quarter.to_s
     assert_equal '2025-Q3', quarter.id
   end
 
