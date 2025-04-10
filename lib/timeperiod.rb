@@ -65,6 +65,6 @@ module Tempora
     alias_method :end,       :end_date
     alias_method :last_day,  :end_date
     alias_method :length,    :duration
-    alias_method :include?   :contains?
+    alias_method :include?,  :contains?
   end
 end
